@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="/ckeditor5/ckeditor.js"></script>
+  <% include head %>
+</head>
+
+<body>
+
+  <form action="/article/article" method="post" class="container">
+    <input type="hidden" name=id value="<%- list._id %>">
+    <input type="hidden" name="page" value="<%- list.page %>">
+
+    <input type="text" placeholder="请输入标题！" name="title" value=<%= list.title %>>
+    <textarea name="content" id="editor"><%- list.content %></textarea>
+    <br>
+    <input type="submit" class="btn btn-primary" value="提交">
+  </form>
+
+
+
+
+
+  <script>
+    ClassicEditor.create(document.querySelector('#editor'), {
+      ckfinder: {
+        uploadUrl:'/article/upload'//上传文件
+      }
+    }).catch(error => {
+
+    }); 
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+
+a {
+  color: #00B7FF;
+}
+.color{
+  color: white;
+}
+.list{
+  width: 60%;
+  margin:auto
+}
+.container-fluid {
+  padding-right: 70px;
+}
+.text{
+  color: #999;
+}
+.box{
+  border: 1px solid #999
+}

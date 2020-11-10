@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script src="/ckeditor5/ckeditor.js"></script>
+    <% include head %>
+  </head>
+  <body>
+        <% include nav %>
+    <!-- 列表 -->
+    <div class="panel panel-default  list">
+      <!-- Default panel contents -->
+      <div class="panel-heading ">评论列表</div>
+      
+    
+    
+      <table class="table">
+        <% data.list.map(function(item,index) { %>
+       <tr>
+     
+         <td><%= index+1 %></td>
+         <td><%= item.username %></td>
+         <td><a href="/users/newly?id=<%= item._id %>"><%= item.title %></a></td>
+         <td><%=  item.itme %></td>
+         <td><a href="/users/delet?delet=<%= item._id %>&page=<%= data.currentPage  %>">删除</a> | <a href="/article?id=<%= item._id %>">编辑</a></td>
+       </tr>
+      <% }) %>
+      </table>
+      <div>
+        <% for(let i=1;i<=data.torle;i++){ %>
+        <a href="/?page=<%=i%>"><%= i %></a>
+        <%}%>
+      </div>
+    </div>
+
+   
+   
+  </body>
+</html>
